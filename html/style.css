@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+:root {
+    --progressColors: rgba(163, 23, 23, 0.647);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* For Web Testing */
+    /* background: url(https://cdn.discordapp.com/attachments/976063877651517480/1050418837130051736/Screenshot_10.png); */
+    /* For Web Testing */
+}
+
+#ui {
+    width: 32vw;
+    height: 10vw;
+    position: absolute;
+
+    bottom: 5%;
+}
+
+#ui.left {
+    left: 3%;
+    transform: perspective(400px) rotate3d(0, 4.9, -2.3, 6deg);
+}
+
+#ui.right {
+    right: 3%;
+    transform: perspective(400px) rotate3d(0, 4.9, -2.3, -6deg);
+}
+
+.health {
+    position: absolute;
+    top: 15.5%;
+    left: 6.9%;
+    display: flex;
+    align-items: center;
+    gap: 0.6%;
+}
+
+#ui.right .health {
+    flex-direction: row-reverse;
+}
+
+.health .icon {
+    width: 3.4vw;
+    height: 3.4vw;
+    background-color: rgba(0, 0, 0, 0.575);
+    border: 1px white solid;
+    transform: rotate(45deg);
+
+}
+
+.health .icon img {
+    --image-size: 90%;
+    margin-top: 12%;
+    margin-left: 13%;
+    width: var(--image-size);
+    height: var(--image-size);
+    object-fit: contain;
+    transform: rotate(-45deg);
+    filter: brightness(0.9);
+}
+
+.health .bar {
+    width: 25vw;
+    height: .7vw;
+    background-color: rgba(209, 209, 209, 0.176);
+    overflow: hidden;
+}
+
+.bottom {
+    position: absolute;
+    width: 24.6vw;
+    height: 3.7vw;
+    bottom: 24%;
+    left: 19%;
+    display: flex;
+    gap: 1%;
+}
+
+#ui.right .bottom {
+    left: 7%;
+    flex-direction: row-reverse;
+}
+
+.status {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+}
+
+#ui.right .status {
+    flex-direction: row-reverse;
+}
+
+.status>div {
+    width: 3.3vw;
+    height: 3.2vw;
+    background-color: rgba(0, 0, 0, 0.301);
+    border: 1px white solid;
+    overflow: hidden;
+}
+
+.status>div .icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+}
+
+.status>div .icon img {
+    --icon: 80%;
+    width: var(--icon);
+    height: var(--icon);
+    object-fit: contain;
+    filter: brightness(0.9);
+}
+
+.status>div .bar {
+    position: absolute;
+    width: 3.3vw;
+    height: 3.2vw;
+    bottom: 6.4%;
+}
+
+.status>div .bar span {
+    display: block;
+    width: 100%;
+    height: 24%;
+    background-color: var(--progressColors);
+    position: absolute;
+    bottom: 0;
+    transition: .3s ease-out;
+}
+
+.health .bar span {
+    display: block;
+    width: 24%;
+    height: .7vw;
+    background-color: var(--progressColors);
+    transition: .3s ease-out;
+}
+
+#ui.right .health .bar span {
+    float: right;
+}
+
+.weapon {
+    width: 55%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.331);
+    box-sizing: border-box;
+    border-right: 5px white solid;
+    border-bottom: 5px rgb(179, 179, 179) solid;
+    display: flex;
+}
+
+#ui.right .weapon {
+    border-right: none;
+    border-left: 5px white solid;
+    flex-direction: row-reverse;
+}
+
+.weapon .image {
+    width: 50%;
+    height: 100%;
+}
+
+.image img {
+    margin-top: 15%;
+    margin-left: 4%;
+    --weapon-size: 55%;
+    width: 100%;
+    height: var(--weapon-size);
+    object-fit: contain;
+    filter: invert(1);
+}
+
+#ui.right .image {
+    transform: rotateY(180deg);
+}
+
+.weapon .ammo {
+    width: 50%;
+    height: 100%;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    filter: brightness(.9);
+    display: flex;
+    gap: 5%;
+}
+
+#ui.right .ammo {
+    flex-direction: row-reverse;
+}
+
+.ammo .clip {
+    font-size: 1.6vw;
+    width: 50%;
+    height: 100%;
+    text-align: right;
+    line-height: 3vw;
+}
+
+#ui.right .ammo .clip {
+    text-align: left;
+}
+
+.ammo .total {
+    width: 50%;
+    font-size: 1.1vw;
+    height: 100%;
+    text-align: center;
+    line-height: 3vw;
+    border-left: 1px white solid;
+}
+
+#ui.right .ammo .total {
+    border-left: none;
+    border-right: 1px white solid;
+}
