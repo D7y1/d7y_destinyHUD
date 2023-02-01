@@ -6,7 +6,12 @@ Destiny Hud Made For vRP Servers (EASY TO CONVERT TO ANY FRAMEWORK)
 
 **About** : 
 > A light Hud taken from Destiny
+
 > It contain [ Health - Armour - Hunger - Thirst - Weapon ammo ]
+
+> You can change the progress color from Config
+
+> And you can change the position of the hud either left or right
 
 **Requirement** :
 > vRP Framework and it easily convertable to your framework just check out server/main.lua
